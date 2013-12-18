@@ -4,6 +4,25 @@ Page = new function() {
     var hideCampaignBtn = '.hide-campaign';
     var viewMoreBtn = '.view-more *';
     var scrollBtn = '[data-scroll]';
+    function setBrowser() {
+        var N= navigator.appName, ua= navigator.userAgent, tem;
+        var M= ua.match(/(opera|chrome|safari|firefox|msie)\/?\s*(\.?\d+(\.\d+)*)/i);
+        if(M && (tem= ua.match(/version\/([\.\d]+)/i))!= null) M[2]= tem[1];
+        M= M? [M[1], M[2]]: [N, navigator.appVersion,'-?'];
+        var browser = $.extend({}, {
+            platform : (function() {
+                var OSName="Unknown";
+                if (navigator.appVersion.indexOf("Win")!=-1) OSName="Windows";
+                if (navigator.appVersion.indexOf("Mac")!=-1) OSName="Mac";
+                if (navigator.appVersion.indexOf("iPhone")!=-1) OSName="iPhone";
+                if (navigator.appVersion.indexOf("Android")!=-1) OSName="Android";
+                return OSName;
+            })(),
+            name : M[0],
+            version : M[1]
+        });
+        $('html').attr('data-platform', browser.platform).attr('data-browser', browser.name).attr('data-version', browser.version);
+    }
     function viewCampaign(e) {
         var btn = $(e.currentTarget);
         var campaign = btn.parents('[data-article]').find('div.campaign');
@@ -59,4 +78,8 @@ Page = new function() {
     $(document).on('click', hideCampaignBtn, hideCampaign);
     $(document).on('click', viewMoreBtn, toggleViewMore);
     $(document).on('click', scrollBtn, scrollPage);
+    setBrowser();
+    Handlebars.renderTemplate('header', {}, '#header');
+    Handlebars.renderTemplate('banner', {}, '#content', 'append');
+    $('#header, #content, #footer').show();
 };
