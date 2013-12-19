@@ -23,6 +23,43 @@ Page = new function() {
         });
         $('html').attr('data-platform', browser.platform).attr('data-browser', browser.name).attr('data-version', browser.version);
     }
+    function renderPage() {
+        Handlebars.renderTemplate('header', {}, '#header');
+        Handlebars.renderTemplate('banner', {}, '#content', 'append');
+        Handlebars.renderTemplate('in-this-issue', {}, '#content', 'append');
+        Handlebars.renderTemplate('merry-makers', {}, '#content', 'append');
+        Handlebars.renderTemplate('footer', {
+            items: [
+                {
+                    href: 'https://university.westfieldlabs.com/',
+                    icon: 'wire-labsu-2',
+                    text: 'Labs U'
+                },
+                {
+                    href: 'http://www.westfieldlabs.com/blog/',
+                    icon: 'wire-blog',
+                    text: 'Labs Blog'
+                },
+                {
+                    href: 'https://www.yammer.com/',
+                    icon: 'wire-yammer',
+                    text: 'Yammer'
+                },
+                {
+                    href: 'http://www.linkedin.com/company/westfield-labs',
+                    icon: 'wire-linkedin',
+                    text: 'LinkedIn'
+                },
+                {
+                    href: 'https://twitter.com/WestfieldLabs',
+                    icon: 'wire-twitter',
+                    text: 'Twitter'
+                }
+            ],
+            year: (new Date()).getFullYear()
+        }, '#footer');
+        $('#header, #content, #footer').show();
+    }
     function viewCampaign(e) {
         var btn = $(e.currentTarget);
         var campaign = btn.parents('[data-article]').find('div.campaign');
@@ -79,7 +116,5 @@ Page = new function() {
     $(document).on('click', viewMoreBtn, toggleViewMore);
     $(document).on('click', scrollBtn, scrollPage);
     setBrowser();
-    Handlebars.renderTemplate('header', {}, '#header');
-    Handlebars.renderTemplate('banner', {}, '#content', 'append');
-    $('#header, #content, #footer').show();
+    //renderPage();
 };

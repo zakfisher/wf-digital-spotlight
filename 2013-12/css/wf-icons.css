@@ -1,15 +1,15 @@
-
 @charset "UTF-8";
 
 @font-face {
-    font-family: "westfield-icons";
-    src:url("wf-icons/westfield-icons.eot");
-    src:url("wf-icons/westfield-icons.eot?#iefix") format("embedded-opentype"),
+  font-family: "westfield-icons";
+  src:url("wf-icons/westfield-icons.eot");
+  src:url("wf-icons/westfield-icons.eot?#iefix") format("embedded-opentype"),
+    url("wf-icons/westfield-icons.woff") format("woff"),
     url("wf-icons/westfield-icons.ttf") format("truetype"),
-    url("wf-icons/westfield-icons.svg#westfield-icons") format("svg"),
-    url("wf-icons/westfield-icons.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
+    url("wf-icons/westfield-icons.svg#westfield-icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
 }
 
 [data-icon]:before {
@@ -38,276 +38,225 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
 .wf-icon-circle-email:before {
   content: "a";
 }
-
 .wf-icon-circle-facebook:before {
   content: "b";
 }
-
 .wf-icon-circle-pinterest:before {
   content: "c";
 }
-
 .wf-icon-circle-plus:before {
   content: "d";
 }
-
 .wf-icon-circle-twitter:before {
   content: "e";
 }
-
 .wf-icon-circle-yammer:before {
   content: "f";
 }
-
 .wf-icon-circle-youtube:before {
   content: "g";
 }
-
 .wf-icon-social-facebook:before {
   content: "h";
 }
-
 .wf-icon-social-pinterest:before {
   content: "i";
 }
-
 .wf-icon-social-plus:before {
   content: "j";
 }
-
 .wf-icon-social-twitter:before {
   content: "k";
 }
-
 .wf-icon-social-yammer:before {
   content: "l";
 }
-
 .wf-icon-social-youtube:before {
   content: "m";
 }
-
 .wf-icon-weather-clear-night:before {
   content: "n";
 }
-
 .wf-icon-weather-cloudy:before {
   content: "o";
 }
-
 .wf-icon-weather-fog:before {
   content: "p";
 }
-
 .wf-icon-weather-partly-cloudy:before {
   content: "q";
 }
-
 .wf-icon-weather-partly-cloudy-night:before {
   content: "r";
 }
-
 .wf-icon-weather-rainy:before {
   content: "s";
 }
-
 .wf-icon-weather-sleet:before {
   content: "t";
 }
-
 .wf-icon-weather-snowy:before {
   content: "u";
 }
-
 .wf-icon-weather-sunny:before {
   content: "v";
 }
-
 .wf-icon-weather-wind:before {
   content: "w";
 }
-
 .wf-icon-wire-add:before {
   content: "x";
 }
-
 .wf-icon-wire-analytics:before {
   content: "y";
 }
-
 .wf-icon-wire-back:before {
   content: "z";
 }
-
 .wf-icon-wire-camera:before {
   content: "A";
 }
-
 .wf-icon-wire-dining:before {
   content: "B";
 }
-
 .wf-icon-wire-directions:before {
   content: "C";
 }
-
 .wf-icon-wire-email:before {
   content: "D";
 }
-
 .wf-icon-wire-events:before {
   content: "E";
 }
-
 .wf-icon-wire-facebook:before {
   content: "F";
 }
-
 .wf-icon-wire-favorite:before {
   content: "G";
 }
-
 .wf-icon-wire-gift-card:before {
   content: "H";
 }
-
 .wf-icon-wire-home:before {
   content: "I";
 }
-
 .wf-icon-wire-info:before {
   content: "J";
 }
-
 .wf-icon-wire-labsu-1:before {
   content: "K";
 }
-
 .wf-icon-wire-labsu-2:before {
   content: "L";
 }
-
 .wf-icon-wire-labsu-3:before {
   content: "M";
 }
-
 .wf-icon-wire-linkedin:before {
   content: "N";
 }
-
 .wf-icon-wire-list:before {
   content: "O";
 }
-
 .wf-icon-wire-map:before {
   content: "P";
 }
-
 .wf-icon-wire-menu:before {
   content: "Q";
 }
-
 .wf-icon-wire-mobile-app:before {
   content: "R";
 }
-
 .wf-icon-wire-movies:before {
   content: "S";
 }
-
 .wf-icon-wire-next:before {
   content: "T";
 }
-
 .wf-icon-wire-offers:before {
   content: "U";
 }
-
 .wf-icon-wire-parking:before {
   content: "V";
 }
-
 .wf-icon-wire-pinterest:before {
   content: "W";
 }
-
 .wf-icon-wire-play:before {
   content: "X";
 }
-
 .wf-icon-wire-product:before {
   content: "Y";
 }
-
 .wf-icon-wire-rating:before {
   content: "Z";
 }
-
 .wf-icon-wire-search:before {
   content: "0";
 }
-
 .wf-icon-wire-see:before {
   content: "1";
 }
-
 .wf-icon-wire-services:before {
   content: "2";
 }
-
 .wf-icon-wire-settings:before {
   content: "3";
 }
-
 .wf-icon-wire-share:before {
   content: "4";
 }
-
 .wf-icon-wire-shopping:before {
   content: "5";
 }
-
 .wf-icon-wire-style:before {
   content: "6";
 }
-
 .wf-icon-wire-time:before {
   content: "7";
 }
-
 .wf-icon-wire-tourism:before {
   content: "8";
 }
-
 .wf-icon-wire-twitter:before {
   content: "9";
 }
-
 .wf-icon-wire-valet:before {
   content: "!";
 }
-
 .wf-icon-wire-visit:before {
   content: "\"";
 }
-
 .wf-icon-wire-weather:before {
   content: "#";
 }
-
 .wf-icon-wire-wf-rewards:before {
   content: "$";
 }
-
 .wf-icon-wire-wifi:before {
   content: "%";
 }
-
 .wf-icon-wire-yammer:before {
   content: "&";
 }
-
+.wf-icon-wire-blog:before {
+  content: "'";
+}
+.wf-icon-country-us:before {
+  content: "(";
+}
+.wf-icon-wf-labs-logo:before {
+  content: ")";
+}
+.wf-icon-eye-open:before {
+  content: "*";
+}
+.wf-icon-circle-play:before {
+  content: "+";
+}
+.wf-icon-circle-blog:before {
+  content: ",";
+}
