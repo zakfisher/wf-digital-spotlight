@@ -183,6 +183,7 @@ body p {
 
 .view-campaign {
   clear: both;
+  float: left;
   margin: 15px;
 }
 .view-campaign div.wf-icon-eye-open {
@@ -198,6 +199,30 @@ body p {
   font-style: italic;
   line-height: 32px;
   padding-left: 10px;
+}
+
+.campaign, .more {
+  display: none;
+  clear: both;
+  min-height: 50px !important;
+}
+
+.campaign .gray-modal {
+  background: #ccc;
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  padding: 40px;
+  position: relative;
+  text-align: center;
+}
+.campaign .gray-modal [class*=wf-icon] {
+  color: white;
+  cursor: pointer;
+  font-size: 50px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
 }
 
 .content {
@@ -238,6 +263,11 @@ body p {
   border: 1px solid #adadad;
   margin: 15px auto;
   max-width: 980px;
+  width: 100%;
+}
+#merry-makers iframe {
+  height: 870px;
+  max-width: 750px;
   width: 100%;
 }
 

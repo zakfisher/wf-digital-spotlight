@@ -23,52 +23,17 @@ Page = new function() {
         });
         $('html').attr('data-platform', browser.platform).attr('data-browser', browser.name).attr('data-version', browser.version);
     }
-    function renderPage() {
-        Handlebars.renderTemplate('header', {}, '#header');
-        Handlebars.renderTemplate('banner', {}, '#content', 'append');
-        Handlebars.renderTemplate('in-this-issue', {}, '#content', 'append');
-        Handlebars.renderTemplate('merry-makers', {}, '#content', 'append');
-        Handlebars.renderTemplate('footer', {
-            items: [
-                {
-                    href: 'https://university.westfieldlabs.com/',
-                    icon: 'wire-labsu-2',
-                    text: 'Labs U'
-                },
-                {
-                    href: 'http://www.westfieldlabs.com/blog/',
-                    icon: 'wire-blog',
-                    text: 'Labs Blog'
-                },
-                {
-                    href: 'https://www.yammer.com/',
-                    icon: 'wire-yammer',
-                    text: 'Yammer'
-                },
-                {
-                    href: 'http://www.linkedin.com/company/westfield-labs',
-                    icon: 'wire-linkedin',
-                    text: 'LinkedIn'
-                },
-                {
-                    href: 'https://twitter.com/WestfieldLabs',
-                    icon: 'wire-twitter',
-                    text: 'Twitter'
-                }
-            ],
-            year: (new Date()).getFullYear()
-        }, '#footer');
-        $('#header, #content, #footer').show();
-    }
     function viewCampaign(e) {
-        var btn = $(e.currentTarget);
-        var campaign = btn.parents('[data-article]').find('div.campaign');
-        campaign.show();
+        $(e.currentTarget).siblings('.campaign').show();
+        if ($(e.currentTarget).siblings('.campaign').find('iframe').length > 0) {
+            $(e.currentTarget).siblings('.campaign').find('iframe').attr('src', 'https://news.westfield.com/pub/sf/ResponseForm?_ri_=X0Gzc2X%3DWQpglLjHJlTQGrzaW8fG17UnmcH4YGndDPG3OuPv5zazc8aGIRVXMtX%3DWQpglLjHJlTQGgDh20vbnR3LzcHPjmoNJDzb5bDFAnzgShDJLb&_ei_=EolaGGF4SNMvxFF7KucKuWPnagcYaHkyBaTWAezHHcm1Hs5nw4zpoIw');
+        }
     }
     function hideCampaign(e) {
-        var btn = $(e.currentTarget);
-        var campaign = btn.parents('.campaign');
-        campaign.hide();
+        $(e.currentTarget).parents('.campaign').hide();
+        if ($(e.currentTarget).parents('.campaign').find('iframe').length > 0) {
+            $(e.currentTarget).parents('.campaign').find('iframe').attr('src', '');
+        }
     }
     function toggleViewMore(e) {
         var btn = $(e.currentTarget);
@@ -116,5 +81,4 @@ Page = new function() {
     $(document).on('click', viewMoreBtn, toggleViewMore);
     $(document).on('click', scrollBtn, scrollPage);
     setBrowser();
-    //renderPage();
 };

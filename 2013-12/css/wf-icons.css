@@ -260,3 +260,9 @@
 .wf-icon-circle-blog:before {
   content: ",";
 }
+.wf-icon-wire-remove:before {
+  content: "-";
+}
+.wf-icon-wire-minus:before {
+  content: ".";
+}

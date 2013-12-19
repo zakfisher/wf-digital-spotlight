@@ -200,6 +200,7 @@ body {
 
 .view-campaign {
    clear: both;
+   float: left;
    margin: 15px;
    div.wf-icon-eye-open {
       color: #b3b3b3;
@@ -214,6 +215,30 @@ body {
       font-style: italic;
       line-height: 32px;
       padding-left: 10px;
+   }
+}
+
+.campaign, .more {
+   display: none;
+   clear: both;
+   min-height: 50px !important;
+}
+
+.campaign {
+   .gray-modal {
+      background: #ccc;
+      @include border-radius(15px);
+      padding: 40px;
+      position: relative;
+      text-align: center;
+      [class*=wf-icon] {
+         color: white;
+         cursor: pointer;
+         font-size: 50px;
+         position: absolute;
+         right: 20px;
+         top: 20px;
+      }
    }
 }
 
@@ -254,6 +279,11 @@ body {
       border: 1px solid #adadad;
       margin: 15px auto;
       max-width: 980px;
+      width: 100%;
+   }
+   iframe {
+      height: 870px;
+      max-width: 750px;
       width: 100%;
    }
 }
