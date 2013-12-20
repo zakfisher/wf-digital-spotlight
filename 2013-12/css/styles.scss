@@ -301,6 +301,20 @@ body {
       max-width: 750px;
       width: 100%;
    }
+   .campaign {
+      p {
+         padding: 0;
+         margin: 0 auto;
+         float: none;
+         max-width: 700px;
+         &:nth-child(3) {
+            margin-top: 10px;
+         }
+         &:nth-child(4) {
+            font-size: 14px;
+         }
+      }
+   }
 }
 
 #q-and-a {
