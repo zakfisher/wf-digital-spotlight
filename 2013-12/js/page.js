@@ -21,16 +21,13 @@ Page = new function() {
             version : M[1]
         });
         if (browser.name == 'MSIE' && Number(browser.version) <= 8) {
-            alert('IE 8, abort!');
+            $('body').html('Please upgrade your browser to view this page.');
         }
         $('html').attr('data-platform', browser.platform).attr('data-browser', browser.name).attr('data-version', browser.version);
     }
     function viewCampaign(e) {
         $(e.currentTarget).siblings('.campaign').show();
         if ($(e.currentTarget).siblings('.campaign').find('iframe').length > 0) {
-            // if mobile
-
-            // else
             $(e.currentTarget).siblings('.campaign').find('iframe').attr('src', 'https://news.westfield.com/pub/sf/ResponseForm?_ri_=X0Gzc2X%3DWQpglLjHJlTQGrzaW8fG17UnmcH4YGndDPG3OuPv5zazc8aGIRVXMtX%3DWQpglLjHJlTQGgDh20vbnR3LzcHPjmoNJDzb5bDFAnzgShDJLb&_ei_=EolaGGF4SNMvxFF7KucKuWPnagcYaHkyBaTWAezHHcm1Hs5nw4zpoIw');
         }
     }

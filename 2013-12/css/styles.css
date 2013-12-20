@@ -68,7 +68,7 @@ body p {
 #header div.logo {
   float: left;
   height: 68px;
-  margin-top: 36px;
+  margin-top: 31px;
   overflow: hidden;
   width: 238px;
 }
@@ -78,7 +78,7 @@ body p {
   float: left;
   height: 100%;
   position: relative;
-  top: -40px;
+  top: -35px;
   width: 238px;
 }
 #header div.wf-icon-wf-labs-logo:before {
@@ -114,7 +114,7 @@ body p {
 #header ul li a:hover {
   color: #e52827;
 }
-#header ul li:last-child {
+#header ul li:last-child, #header ul li.last {
   padding-right: 0;
 }
 
@@ -322,7 +322,11 @@ body p {
   margin-bottom: 10px;
   max-width: 100%;
 }
-#q-and-a div.col-xs-4:nth-child(5) {
+#q-and-a div.col-xs-4:nth-child(2), #q-and-a div.col-xs-4.nc2 {
+  clear: both;
+  float: left;
+}
+#q-and-a div.col-xs-4:nth-child(5), #q-and-a div.col-xs-4.nc5 {
   display: none;
 }
 #q-and-a div.more div.talk {
@@ -463,10 +467,10 @@ body p {
 #footer ul li a:hover * {
   color: white;
 }
-#footer ul li:first-child p {
+#footer ul li:first-child p, #footer ul li.first p {
   border-left: none;
 }
-#footer ul li:last-child p {
+#footer ul li:last-child p, #footer ul li.last p {
   border-right: none;
 }
 #footer span {
@@ -509,25 +513,21 @@ body p {
   }
   #q-and-a .col-xs-4 div.text {
     float: left;
-    margin: 20px 0 0 20px;
-    max-width: 160px;
+    margin: 20px 0 0 15px;
+    max-width: 150px;
   }
   #q-and-a .col-xs-4 img, #q-and-a .col-xs-4 p {
     float: left !important;
     text-align: left !important;
   }
-  #q-and-a .col-xs-4:nth-child(3) {
+  #q-and-a .col-xs-4:nth-child(3), #q-and-a .col-xs-4.nc3 {
     display: none;
   }
-  #q-and-a .col-xs-4:nth-child(4) {
+  #q-and-a .col-xs-4:nth-child(4), #q-and-a .col-xs-4.nc4 {
     margin-bottom: 0;
   }
-  #q-and-a .col-xs-4:nth-child(5) {
+  #q-and-a .col-xs-4:nth-child(5), #q-and-a .col-xs-4.nc5 {
     display: block !important;
-  }
-
-  #liveclicker p {
-    max-width: 100% !important;
   }
 }
 @media (min-width: 575px) and (max-width: 768px) {
@@ -570,6 +570,14 @@ body p {
 
   #q-and-a h3, #liveclicker h3 {
     margin-top: 20px;
+  }
+
+  #liveclicker .col-xs-4 {
+    clear: both;
+    width: 100%;
+  }
+  #liveclicker .col-xs-4 p {
+    max-width: 100% !important;
   }
 
   #footer ul li [class*="wf-icon"] {

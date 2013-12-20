@@ -84,7 +84,7 @@ body {
    div.logo {
       float: left;
       height: 68px;
-      margin-top: 36px;
+      margin-top: 31px;
       overflow: hidden;
       width: 238px;
    }
@@ -94,7 +94,7 @@ body {
       float: left;
       height: 100%;
       position: relative;
-      top: -40px;
+      top: -35px;
       width: 238px;
       &:before {
          line-height: 150px;
@@ -128,7 +128,7 @@ body {
                color: $red;
             }
          }
-         &:last-child {
+         &:last-child, &.last {
             padding-right: 0;
          }
       }
@@ -339,7 +339,11 @@ body {
          margin-bottom: 10px;
          max-width: 100%;
       }
-      &:nth-child(5) {
+      &:nth-child(2), &.nc2 {
+         clear: both;
+         float: left;
+      }
+      &:nth-child(5), &.nc5 {
          display: none;
       }
    }
@@ -489,12 +493,12 @@ body {
                }
             }
          }
-         &:first-child {
+         &:first-child, &.first {
             p {
                border-left: none;
             }
          }
-         &:last-child {
+         &:last-child, &.last {
             p {
                border-right: none;
             }
@@ -542,28 +546,23 @@ body {
       .col-xs-4 {
          div.text {
             float: left;
-            margin: 20px 0 0 20px;
-            max-width: 160px;
+            margin: 20px 0 0 15px;
+            max-width: 150px;
          }
          img, p {
             float: left !important;
             text-align: left !important;
          }
          margin-bottom: 20px;
-         &:nth-child(3) {
+         &:nth-child(3), &.nc3 {
             display: none;
          }
-         &:nth-child(4) {
+         &:nth-child(4), &.nc4 {
             margin-bottom: 0;
          }
-         &:nth-child(5) {
+         &:nth-child(5), &.nc5 {
             display: block !important;
          }
-      }
-   }
-   #liveclicker {
-      p {
-         max-width: 100% !important;
       }
    }
 }
@@ -612,6 +611,15 @@ body {
    #q-and-a, #liveclicker {
       h3 {
          margin-top: 20px;
+      }
+   }
+   #liveclicker {
+      .col-xs-4 {
+         clear: both;
+         width: 100%;
+         p {
+            max-width: 100% !important;
+         }
       }
    }
    #footer {
