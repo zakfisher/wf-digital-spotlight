@@ -45,31 +45,40 @@ body p {
 }
 
 .container {
-  max-width: 1120px;
+  max-width: 1130px;
   position: relative;
   height: 100%;
-  margin: 0 15px;
+  padding: 0 15px;
+  margin: 0 auto;
 }
 
 .container-sm {
   float: right;
-  max-width: 980px;
-  margin-right: 20px;
+  padding-left: 120px;
   width: 100%;
 }
 
 #header {
   background: #29292b;
-  height: 138px;
   overflow: hidden;
+  min-height: 138px;
   position: relative;
   width: 100%;
+}
+#header div.logo {
+  float: left;
+  height: 68px;
+  margin-top: 36px;
+  overflow: hidden;
+  width: 238px;
 }
 #header div.wf-icon-wf-labs-logo {
   color: white;
   font-size: 240px;
   float: left;
   height: 100%;
+  position: relative;
+  top: -40px;
   width: 238px;
 }
 #header div.wf-icon-wf-labs-logo:before {
@@ -122,9 +131,10 @@ body p {
   margin-top: 40px;
   margin-left: auto;
   margin-right: auto;
-  max-width: 830px;
+  max-width: 860px;
   text-transform: none;
   text-align: left;
+  padding: 0 30px;
 }
 #banner img {
   margin: 0 auto;
@@ -137,7 +147,7 @@ body p {
   height: 240px;
   position: absolute;
   padding: 0 40px;
-  right: 20px;
+  right: 15px;
   width: 265px;
   z-index: 10;
 }
@@ -148,6 +158,16 @@ body p {
   margin: 0;
   padding: 30px 0 10px;
   text-align: center;
+}
+#in-this-issue a {
+  color: #ccc;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 14px;
+  font-style: italic;
+  margin-left: 5px;
+}
+#in-this-issue a:hover {
+  text-decoration: underline;
 }
 #in-this-issue ul {
   padding-top: 20px;
@@ -160,24 +180,15 @@ body p {
 #in-this-issue ul li img {
   margin: 0 5px 0 -15px;
 }
-#in-this-issue ul li span {
+#in-this-issue ul li a {
+  color: black;
   cursor: pointer;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 14px;
   font-style: italic;
   line-height: 24px;
 }
-#in-this-issue ul li span:hover {
-  text-decoration: underline;
-}
-#in-this-issue a {
-  color: #ccc;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 14px;
-  font-style: italic;
-  margin-left: 5px;
-}
-#in-this-issue a:hover {
+#in-this-issue ul li a:hover {
   text-decoration: underline;
 }
 
@@ -224,6 +235,9 @@ body p {
   right: 20px;
   top: 20px;
 }
+.campaign .gray-modal [class*=wf-icon]:hover {
+  color: #29292b;
+}
 
 .content {
   clear: both;
@@ -257,7 +271,8 @@ body p {
   top: 45px;
 }
 #merry-makers h3, #merry-makers p {
-  max-width: 600px;
+  width: 100%;
+  padding-right: 380px;
 }
 #merry-makers img {
   border: 1px solid #adadad;
@@ -293,6 +308,7 @@ body p {
   font-size: 14px;
   font-style: italic;
   line-height: 16px;
+  padding-left: 0;
 }
 #q-and-a div.col-xs-4 p {
   float: none;
@@ -304,6 +320,47 @@ body p {
 }
 #q-and-a div.col-xs-4 img {
   margin-bottom: 10px;
+  max-width: 100%;
+}
+#q-and-a div.col-xs-4:nth-child(5) {
+  display: none;
+}
+#q-and-a div.more div.talk {
+  padding: 12px;
+  position: relative;
+  max-width: 700px;
+  margin: 20px auto;
+  min-height: 40px;
+  border-radius: 12px;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+}
+#q-and-a div.more div.talk p {
+  color: white;
+  padding: 0;
+  margin: 0;
+}
+#q-and-a div.more div.talk i {
+  font-size: 36px;
+  position: absolute;
+  top: 5px;
+}
+#q-and-a div.more div.talk.van {
+  background: #4d4d4d;
+}
+#q-and-a div.more div.talk.van p {
+  font-weight: bold;
+}
+#q-and-a div.more div.talk.van i {
+  color: #4d4d4d;
+  left: -10px;
+}
+#q-and-a div.more div.talk.curt {
+  background: #999;
+}
+#q-and-a div.more div.talk.curt i {
+  color: #999;
+  right: -10px;
 }
 
 #liveclicker div.wf-icon-circle-play {
@@ -403,8 +460,8 @@ body p {
   font-size: 14px;
   height: 20px;
 }
-#footer ul li a:hover p {
-  color: #e52827;
+#footer ul li a:hover * {
+  color: white;
 }
 #footer ul li:first-child p {
   border-left: none;
@@ -419,11 +476,129 @@ body p {
   top: 170px;
 }
 
-/* Small devices (tablets, 768px and up) */
-/* Medium devices (desktops, 992px and up) */
-/* Large devices (large desktops, 1280px and up) */
-@media (min-width: 1280px) {
-  .container {
-    margin: 0 auto !important;
+@media (max-width: 575px) {
+  #header div.logo {
+    margin-top: 16px;
+  }
+  #header ul {
+    display: none;
+  }
+  #header h3 {
+    margin: 18px 10px 0;
+    font-size: 15px;
+    float: left;
+    width: 100%;
+    text-align: left;
+  }
+
+  #banner h1 {
+    font-size: 30px;
+    margin: 20px;
+    margin-bottom: 10px;
+    line-height: 34px;
+    padding-left: 10px;
+  }
+
+  .col-xs-4 {
+    clear: both;
+    width: 100%;
+  }
+
+  #q-and-a .col-xs-4 {
+    margin-bottom: 20px;
+  }
+  #q-and-a .col-xs-4 div.text {
+    float: left;
+    margin: 20px 0 0 20px;
+    max-width: 160px;
+  }
+  #q-and-a .col-xs-4 img, #q-and-a .col-xs-4 p {
+    float: left !important;
+    text-align: left !important;
+  }
+  #q-and-a .col-xs-4:nth-child(3) {
+    display: none;
+  }
+  #q-and-a .col-xs-4:nth-child(4) {
+    margin-bottom: 0;
+  }
+  #q-and-a .col-xs-4:nth-child(5) {
+    display: block !important;
+  }
+
+  #liveclicker p {
+    max-width: 100% !important;
+  }
+}
+@media (min-width: 575px) and (max-width: 768px) {
+  #header h3 {
+    width: 300px;
+  }
+}
+@media (max-width: 700px) {
+  div.container-sm {
+    padding: 0;
+  }
+
+  div.content [class*="wf-icon"] {
+    position: relative !important;
+    text-align: center;
+    top: 0 !important;
+  }
+  div.content .col-xs-4, div.content .col-xs-12 {
+    padding: 0 !important;
+  }
+  div.content h3, div.content p {
+    padding-left: 0 !important;
+  }
+  div.content h3 {
+    clear: left;
+    font-size: 28px;
+    margin-top: 0;
+    text-align: center;
+    width: 100%;
+  }
+  div.content .campaign .gray-modal {
+    padding: 40px 0 !important;
+  }
+  div.content .campaign .hide-campaign {
+    font-size: 30px !important;
+    right: 8px !important;
+    top: 8px !important;
+    position: absolute !important;
+  }
+
+  #q-and-a h3, #liveclicker h3 {
+    margin-top: 20px;
+  }
+
+  #footer ul li [class*="wf-icon"] {
+    font-size: 40px !important;
+    margin: 0 5px;
+  }
+  #footer ul li a p {
+    display: none;
+  }
+}
+@media (max-width: 860px) {
+  #in-this-issue {
+    display: none;
+  }
+
+  #merry-makers h3, #merry-makers p {
+    padding-right: 0;
+  }
+}
+@media (max-width: 940px) {
+  .gray-modal iframe {
+    width: 100%;
+  }
+}
+@media (max-width: 1080px) {
+  .campaign .hide-campaign {
+    font-size: 30px !important;
+    right: 8px !important;
+    top: 8px !important;
+    position: absolute !important;
   }
 }
