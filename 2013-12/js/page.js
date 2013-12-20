@@ -2,7 +2,7 @@ Page = new function() {
     var p = this;
     var viewCampaignBtn = '.view-campaign';
     var hideCampaignBtn = '.hide-campaign';
-    var viewMoreBtn = '.view-more *';
+    var viewMoreBtn = '.view-more div';
     function setBrowser() {
         var N= navigator.appName, ua= navigator.userAgent, tem;
         var M= ua.match(/(opera|chrome|safari|firefox|msie)\/?\s*(\.?\d+(\.\d+)*)/i);
@@ -28,7 +28,12 @@ Page = new function() {
     function viewCampaign(e) {
         $(e.currentTarget).siblings('.campaign').show();
         if ($(e.currentTarget).siblings('.campaign').find('iframe').length > 0) {
-            $(e.currentTarget).siblings('.campaign').find('iframe').attr('src', 'https://news.westfield.com/pub/sf/ResponseForm?_ri_=X0Gzc2X%3DWQpglLjHJlTQGrzaW8fG17UnmcH4YGndDPG3OuPv5zazc8aGIRVXMtX%3DWQpglLjHJlTQGgDh20vbnR3LzcHPjmoNJDzb5bDFAnzgShDJLb&_ei_=EolaGGF4SNMvxFF7KucKuWPnagcYaHkyBaTWAezHHcm1Hs5nw4zpoIw');
+            var url = 'https://news.westfield.com/pub/sf/ResponseForm?_ri_=X0Gzc2X%3DWQpglLjHJlTQGrzaW8fG17UnmcH4YGndDPG3OuPv5zazc8aGIRVXMtX%3DWQpglLjHJlTQGgDh20vbnR3LzcHPjmoNJDzb5bDFAnzgShDJLb&_ei_=EolaGGF4SNMvxFF7KucKuWPnagcYaHkyBaTWAezHHcm1Hs5nw4zpoIw';
+            if ($('body').width() <= 940) {
+                $(e.currentTarget).siblings('.campaign').hide();
+                window.open(url, '_blank');
+            }
+            else $(e.currentTarget).siblings('.campaign').find('iframe').attr('src', url);
         }
     }
     function hideCampaign(e) {
