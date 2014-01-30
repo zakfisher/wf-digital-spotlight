@@ -1,8 +1,4 @@
-Page = new function() {
-    var p = this;
-    var viewCampaignBtn = '.view-campaign';
-    var hideCampaignBtn = '.hide-campaign';
-    var viewMoreBtn = '.view-more div';
+(function() {
     function setBrowser() {
         var N= navigator.appName, ua= navigator.userAgent, tem;
         var M= ua.match(/(opera|chrome|safari|firefox|msie)\/?\s*(\.?\d+(\.\d+)*)/i);
@@ -25,38 +21,26 @@ Page = new function() {
         }
         $('html').attr('data-platform', browser.platform).attr('data-browser', browser.name).attr('data-version', browser.version);
     }
-    function viewCampaign(e) {
-        $(e.currentTarget).siblings('.campaign').show();
-        if ($(e.currentTarget).siblings('.campaign').find('iframe').length > 0) {
-            var url = 'https://news.westfield.com/pub/sf/ResponseForm?_ri_=X0Gzc2X%3DWQpglLjHJlTQGrzaW8fG17UnmcH4YGndDPG3OuPv5zazc8aGIRVXMtX%3DWQpglLjHJlTQGgDh20vbnR3LzcHPjmoNJDzb5bDFAnzgShDJLb&_ei_=EolaGGF4SNMvxFF7KucKuWPnagcYaHkyBaTWAezHHcm1Hs5nw4zpoIw';
-            if ($('body').width() <= 940) {
-                $(e.currentTarget).siblings('.campaign').hide();
-                window.open(url, '_blank');
-            }
-            else $(e.currentTarget).siblings('.campaign').find('iframe').attr('src', url);
-        }
-    }
-    function hideCampaign(e) {
-        $(e.currentTarget).parents('.campaign').hide();
-        if ($(e.currentTarget).parents('.campaign').find('iframe').length > 0) {
-            $(e.currentTarget).parents('.campaign').find('iframe').attr('src', '');
-        }
-    }
     function toggleViewMore(e) {
         var viewMore = $(e.currentTarget).parents('div.view-more');
-        if (viewMore.find('span').text() == 'view full interview') {
-            $('div.view-more div').addClass('wf-icon-wire-minus').removeClass('wf-icon-wire-add');
-            $('div.view-more span').text('hide full interview');
-            $('.more').slideDown();
+        var icon = viewMore.find('[class*="wf-icon"]');
+        var span = viewMore.find('span');
+        var more = viewMore.siblings('.more');
+        if (icon.is('.wf-icon-wire-add')) {
+            icon.addClass('wf-icon-wire-minus').removeClass('wf-icon-wire-add');
+            span.attr('data-text', span.text()).text('Hide');
+            more.slideDown();
         }
         else {
-            $('div.view-more div').addClass('wf-icon-wire-add').removeClass('wf-icon-wire-minus');
-            $('div.view-more span').text('view full interview');
-            $('.more').slideUp();
+            icon.addClass('wf-icon-wire-add').removeClass('wf-icon-wire-minus');
+            span.text(span.attr('data-text'));
+            more.slideUp();
         }
     }
-    $(document).on('click', viewCampaignBtn, viewCampaign);
-    $(document).on('click', hideCampaignBtn, hideCampaign);
-    $(document).on('click', viewMoreBtn, toggleViewMore);
+    function viewHSVideo(e) {
+        $(e.currentTarget).after('<iframe src="http://link.brightcove.com/services/player/bcpid1862649974001?bckey=AQ~~,AAABsa9sH9E~,OWyaFJcdqPw7M2kFPTFNTRnbVR6qKEgv&bctid=2293859145001"></iframe>').remove();
+    }
+    $(document).on('click', '.view-more div', toggleViewMore);
+    $(document).on('click', '#view-hs-video', viewHSVideo);
     setBrowser();
-};
+})();
