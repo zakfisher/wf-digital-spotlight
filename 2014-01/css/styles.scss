@@ -441,7 +441,7 @@ body {
             p {
                 font-weight: bold;
                 margin: 0;
-                span.red {
+                a {
                     color: $red;
                     font-family: Arial, Helvetica, sans-serif;
                     font-size: 14px;
@@ -651,6 +651,7 @@ body {
             max-width: 580px;
         }
         div.more div.col {
+            border-bottom: 1px solid #ccc;
             width: 100%;
             span {
                 height: 40px;

@@ -422,7 +422,7 @@ body b {
   font-weight: bold;
   margin: 0;
 }
-#ab-testing ul li p span.red {
+#ab-testing ul li p a {
   color: #e52827;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
@@ -606,6 +606,7 @@ body b {
     max-width: 580px;
   }
   #test-methodology div.more div.col {
+    border-bottom: 1px solid #ccc;
     width: 100%;
   }
   #test-methodology div.more div.col span {
